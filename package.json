@@ -1,0 +1,32 @@
+{
+  "name": "funpic-bot",
+  "version": "1.0.0",
+  "description": "FunPic Discord Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SketchPiece/funpic-bot.git"
+  },
+  "keywords": [
+    "ts",
+    "discord",
+    "bot"
+  ],
+  "author": "SketchPiece",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SketchPiece/funpic-bot/issues"
+  },
+  "homepage": "https://github.com/SketchPiece/funpic-bot#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "ts-node": "^9.1.1"
+  }
+}

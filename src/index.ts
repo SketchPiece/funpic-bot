@@ -19,3 +19,5 @@ async function start() {
 }
 
 start()
+  .then(() => consola.info('Bot authorization...'))
+  .catch(e => consola.error(e))

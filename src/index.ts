@@ -8,7 +8,10 @@ const prefix = process.env.PREFIX || '!'
 
 const bot = new ClientWrapper(prefix)
 
-bot.on('ready', () => consola.success('Bot has been successfully logged in!'))
+bot.on('ready', () => {
+  consola.success('Bot has been successfully logged in!')
+  bot?.user?.setActivity(`${prefix}help`, { type: 'WATCHING' })
+})
 
 bot.on('message', bot.commandsHandler)
 

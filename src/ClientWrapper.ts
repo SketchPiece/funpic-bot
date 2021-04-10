@@ -37,7 +37,8 @@ export class ClientWrapper extends Client {
     if (this.commands.has(cmd))
       this.commands.get(cmd)?.execute(this, message, args)
     const aliasCommand = this.aliases.get(cmd)
-    if (aliasCommand) this.commands.get(cmd)?.execute(this, message, args)
+    if (aliasCommand)
+      this.commands.get(aliasCommand)?.execute(this, message, args)
   }
 }
 

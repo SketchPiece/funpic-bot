@@ -1,7 +1,6 @@
+require('dotenv').config()
 import { ClientWrapper } from './ClientWrapper'
 import consola from 'consola'
-import { config } from 'dotenv'
-config()
 
 const token = process.env.BOT_TOKEN || null
 const prefix = process.env.PREFIX || '!'

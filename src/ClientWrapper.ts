@@ -3,6 +3,7 @@ import consola from 'consola'
 import fs from 'fs/promises'
 import path from 'path'
 import { getCommandArgs, onlyTS } from './utils'
+import { TimeoutService } from './services/timeout.service'
 
 export class ClientWrapper extends Client {
   commands: Collection<string, command> = new Collection<string, command>()
@@ -31,6 +32,10 @@ export class ClientWrapper extends Client {
   commandsHandler(message: Message) {
     if (message.author.bot) return
     if (!message.content.startsWith(this.prefix)) return
+    if (!TimeoutService.checkUserTimeout(message.author.id))
+      return message.channel.send(
+        `Установлено ограничение на создание картинки в ${TimeoutService.timeout} секунд ⏱️`
+      )
     const args = getCommandArgs(this.prefix, message.content)
     const cmd = args.shift()?.toLowerCase()
     if (!cmd) return
